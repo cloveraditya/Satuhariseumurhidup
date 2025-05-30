@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kenangan Pernikahan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #000;
+      color: white;
+      overflow: hidden;
+    }
+
+       .popup {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .popup.hidden {
+      display: none;
+    }
+
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+
+    .slide img {
+      max-width: 90%;
+      max-height: 60vh;
+      margin-top: 20px;
+    }
+
+    .warning {
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* Sakura Rain */
+    .petal {
+      position: fixed;
+      top: -20px;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* CHIBI STYLE */
+    .chibi-container {
+      position: fixed;
+      bottom: -150px;
+      right: -200px;
+      display: flex;
+      align-items: flex-end;
+      z-index: 20;
+      animation: chibiIn 1.5s ease-out forwards;
+    }
+
+    .chibi-img {
+      width: 100px;
+      height: auto;
+    }
+
+    .chibi-bubble {
+      background: white;
+      color: black;
+      padding: 10px 15px;
+      margin-right: 10px;
+      border-radius: 15px;
+      font-size: 14px;
+      max-width: 180px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateX(50px);
+      animation: bubbleIn 2s ease-out 0.5s forwards;
+    }
+
+    @keyframes chibiIn {
+      to {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    @keyframes bubbleIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenangan Pernikahan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #000;
+      color: white;
+      overflow: hidden;
+    }
+
+    .popup {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .popup.hidden {
+      display: none;
+    }
+
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+
+    .slide h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .slide h2 {
+      max-width: 600px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .slide img {
+      max-width: 90%;
+      max-height: 50vh;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .warning {
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .petal {
+      position: fixed;
+      top: -20px;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <h1>SATU HARI SEUMUR HIDUP</h1>
+  <button onclick="startSlides()">Mulai</button>
+</div>
+
+<!-- SLIDES -->
+<div class="slide" id="slide-1">
+  <h2>Hari itu bukan cuma tentang gaun putih, janur kuning, atau hiasan bunga.
+Itu hari saat aku memilihmu, dan kamu memilihku.
+Di hadapan keluarga, sahabat, dan Tuhan, kita berjanji.
+Untuk saling menjaga, saling memahami, dan saling mencintai.
+Bukan hanya di hari yang cerah, tapi juga saat badai datang.</h2>
+  <img src="https://assets.onecompiler.app/43k3n8v9v/43k9y23y3/1000000481.jpg" alt="Foto Slide 1">
+  <p class="warning">Ketuk 2 kali untuk pindah slide</p>
+</div>
+
+<div class="slide" id="slide-2">
+  <h2>Setengah tahun mungkin sudah berlalu,
+tapi setiap detik dari hari itu masih hangat dalam ingatan.</h2>
+  <img src="https://assets.onecompiler.app/43k3n8v9v/43k9y23y3/1000000482.jpg" alt="Foto Slide 2">
+  <p class="warning">Ketuk 2 kali untuk pindah slide</p>
+</div>
+
+<div class="slide" id="slide-3">
+  <h2>Ketika akhirnya aku melihatnya melangkah ke pelaminan, semua rasa takut hilang. Hanya ada kebahagiaan dan haru yang memenuhi hati.</h2>
+  <img src="https://assets.onecompiler.app/43k3n8v9v/43k9y23y3/1000000468.jpg" alt="Foto Slide 3">
+  <p class="warning">Ketuk 2 kali untuk pindah slide</p>
+</div>
+
+<div class="slide" id="slide-4">
+  <h2>Di hadapan keluarga dan sahabat, kami mengucapkan janji suci. Janji yang bukan hanya kata-kata, tapi ikatan yang akan kami bawa sepanjang hidup.</h2>
+  <img src="https://assets.onecompiler.app/43k3n8v9v/43ka3he4z/1000000478.jpg" alt="Foto Slide 4">
+  <p class="warning">Ketuk 2 kali untuk pindah slide</p>
+</div>
+
+<div class="slide" id="slide-5">
+  <h2>Tangan kami saling menggenggam erat, seolah berkata, “Kita siap menghadapi apapun bersama.”
+
+Momen itu bukan sekadar upacara, tapi awal dari perjalanan panjang yang penuh cinta, tawa, dan juga tantangan. Tapi aku yakin, selama kita bersama, semua akan terasa ringan.</h2>
+  <img src="https://assets.onecompiler.app/43k3n8v9v/43ka6gqt6/1000000466.jpg" alt="Foto Slide 5">
+  <p class="warning">Ketuk 2 kali untuk kembali ke awal</p>
+</div>
+
+<div style="position: fixed; bottom: 10px; left: 10px; font-size: 12px; color: rgba(255,255,255,0.6); z-index: 5;">
+  Created by Fahry Aditya
+</div>
+
+<!-- SAKURA -->
+<script>
+  for (let i = 0; i < 30; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = 3 + Math.random() * 5 + "s";
+    document.body.appendChild(petal);
+  }
+</script>
+
+<!-- SCRIPT SLIDE -->
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  let lastTap = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      if (i === index) {
+        s.classList.add('active');
+      } else {
+        s.classList.remove('active');
+      }
+    });
+  }
+
+  function startSlides() {
+    document.getElementById('popup').classList.add('hidden');
+    showSlide(currentSlide);
+  }
+
+  document.addEventListener('touchend', () => {
+    const now = new Date().getTime();
+    if (now - lastTap < 300) {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    lastTap = now;
+  });
+</script>
+
+</body>
+</html>
+
+<!-- CHIBI CHARACTER -->
+<div class="chibi-container">
+  <img src="https://assets.onecompiler.app/43k3n8v9v/43k97fhjy/1000036442.png" alt="Chibi" class="chibi-img" />
+  <div class="chibi-bubble">Selamat Datang Di Moment 27 Desember</div>
+</div>
+
+<!-- Sakura Effect -->
+<script>
+  for (let i = 0; i < 30; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = 3 + Math.random() * 5 + "s";
+    document.body.appendChild(petal);
+  }
+</script>
+
+<!-- Slide Navigation Script -->
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  let lastTap = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      if (i === index) {
+        s.classList.add('active');
+      } else {
+        s.classList.remove('active');
+      }
+    });
+  }
+
+  function startSlides() {
+    document.getElementById('popup').classList.add('hidden');
+    showSlide(currentSlide);
+  }
+
+  document.addEventListener('touchend', () => {
+    const now = new Date().getTime();
+    if (now - lastTap < 300) {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    lastTap = now;
+  });
+</script>
+
+</body>
+</html>
