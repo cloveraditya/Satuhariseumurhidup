@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Datang</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .chibi-container {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      padding: 10px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      transform: translateY(100px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .chibi-character {
+      height: 120px;
+      animation: waveHand 2s infinite;
+    }
+
+    .typing-text {
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      width: 0;
+      animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes waveHand {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 0px; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terima Kasih Bu Ade</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .container {
+      box-sizing: border-box;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeIn 1.2s ease-in-out;
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100vh;
+    }
+
+    h1, h2 {
+      color: #90ee90;
+      text-align: left;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-style: italic;
+      font-size: 1em;
+      color: #aaa;
+      text-align: left;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100px;
+      border-radius: 8px;
+    }
+
+    #typing-text {
+      font-size: 1.4em;
+      margin-top: 30px;
+      min-height: 2em;
+      white-space: pre-wrap;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #volume-control {
+      position: fixed;
+      right: 15px;
+      bottom: 50px;
+      background: #222a22cc;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      color: #90ee90;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 180px;
+      user-select: none;
+      z-index: 1000;
+    }
+
+    #volume-slider {
+      flex-grow: 1;
+      cursor: pointer;
+    }
+
+    #volume-value {
+      min-width: 30px;
+      text-align: right;
+    }
+
+    .slide-container {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 16px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .teks-dukung {
+      color: #ccc;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .teks-isi {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    #slide-warning {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #aaa;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body onload="startTyping()">
+  <div class="container">
+    <h1>Terima Kasih Bu Ade</h1>
+    
+    <p>Untuk semua waktu yang Ibu berikan, meski di tengah kesibukan yang tak pernah henti.
+Untuk senyum yang tetap Ibu hadirkan, meski lelah sering kali menyapa.
+Untuk ketegasan yang mengajarkan kami disiplin, dan kelembutan yang membuat kami merasa dihargai.
+
+Kami Dari kelas 9B kami tumbuh, belajar, dan berubah.
+Dan di setiap langkah itu, Ibu adalah bagian penting yang memberi warna dalam perjalanan kami.
+Ibu mungkin tidak selalu ada di kelas, tapi kehadiran Ibu terasa di hati kami.
+
+Terima kasih karena sudah menjadi panutan,
+bukan hanya dalam hal belajar,
+tetapi juga dalam hal menjadi pribadi yang kuat, sabar, dan penuh kasih.</p>
+    <p>Kami akan selalu mengingat Ibu,
+sebagai sosok yang berjasa,
+dan sebagai bagian indah dari cerita kami di sekolah ini.</p>
+
+    <h2>Kenangan Manis</h2>
+    <div class="gallery">
+
+      <img src="https://assets.onecompiler.app/43k3cj6jv/43k3mpuna/IMG-20250528-WA0111.jpg" alt="Kenangan 4" loading="lazy" />
+      <img src="https://assets.onecompiler.app/43k3cj6jv/43k3mpuna/IMG-20250528-WA0108.jpg" alt="Kenangan 5" loading="lazy" />
+      
+      <img src="https://assets.onecompiler.app/43k3cj6jv/43k3mpuna/IMG-20250528-WA0107.jpg" alt="Kenangan 7" loading="lazy" />
+    </div>
+
+    <h2>Pesan & Kesan</h2>
+    <p><strong>Kelas 9B:</strong> Selama tiga tahun kami belajar di sekolah ini dari  kelas 9B kami melihat dan merasakan peran besar Ibu Ade dalam perjalanan kami.
+Ibu mungkin tidak selalu berada di kelas bersama kami, tapi kami tahu:
+Setiap langkah Ibu di sekolah ini membawa banyak hal untuk kami  dari kebijakan  yang bijak, perhatian yang diam-diam, sampai senyum yang memberi semangat.
+
+Kami tahu kami bukan kelas yang sempurna.
+Kami sering ribut, kadang sulit diatur, bahkan mungkin sering membuat Ibu khawatir.
+Tapi kami melihat sendiri, bagaimana Ibu tetap sabar, tetap kuat, dan tetap hadir dengan cinta yang tidak banyak bicara, tapi dalam.
+
+
+ <p><strong>Pesan:
+Terima kasih, Ibu Ade, atas segala pengorbanan dan perhatian yang tidak selalu kami sadari saat itu, tapi sangat kami hargai sekarang.
+Kami mohon maaf atas segala kenakalan dan kekurangan kami selama ini.
+Kami bangga pernah dibimbing oleh sosok seperti Ibu.
+Semoga Ibu selalu diberikan kesehatan, kebahagiaan, dan keberkahan dalam setiap langkah ke depan.
+
+Kami akan selalu ingat Ibu.</p>
+
+    <div class="slide-container">
+      <div class="slide active" id="slide-1">
+        <h2>Tentang Bu Ade</h2>
+        <p class="teks-dukung">Bukan sekadar guru, tapi bagian dari hati kami.
+
+Ibu Ade adalah sosok yang tidak pernah kami lupakan.
+Bukan karena gelarnya, bukan karena jabatan—
+tetapi karena kebaikan hatinya yang begitu tulus.
+
+Sejak kami di kelas 7 hingga kini di kelas 9,
+kami melihat bagaimana Ibu hadir dengan penuh kesabaran,
+menghadapi kelas yang kadang ribut, kadang sulit diatur,
+namun tetap Ibu bimbing dengan senyum dan ketulusan.
+
+Kami belajar banyak dari Ibu.
+Bukan hanya pelajaran di papan tulis,
+tetapi juga pelajaran hidup:
+tentang bagaimana menjadi pribadi yang sabar, bertanggung jawab, dan tidak mudah menyerah.
+
+Meski Ibu sering sibuk, kami tahu:
+setiap waktu yang Ibu luangkan untuk kami adalah bukti kasih yang tak ternilai.
+Dan untuk itu, kami sangat menghargai dan berterima kasih...</p>
+        <p class="teks-isi"></p>
+      </div>
+      <div class="slide" id="slide-2">
+        <h2>Pelajaran Hidup</h2>
+        <p class="teks-dukung"Pelajaran Hidup di Kelas 9B
+Lebih dari sekadar ruang belajar.
+.</p>
+        <p class="teks-isi">Kelas 9B bukan hanya tempat kami duduk, mencatat, dan mengerjakan soal.
+Di sinilah kami belajar tentang arti kebersamaan, kesabaran, dan pengertian.
+Kami belajar bahwa setiap orang punya cara sendiri untuk tumbuh—
+ada yang cepat memahami, ada yang butuh waktu. Tapi semua tetap berhak dihargai.
+
+Kami belajar bahwa guru bukan hanya pemberi materi,
+tapi juga pemandu arah, pendengar yang sabar, dan pelindung yang diam-diam mendoakan.
+Kami belajar dari teguran, tawa, bahkan dari air mata.
+
+Di 9B, kami mengerti bahwa nilai bukan hanya angka,
+tapi juga sikap, usaha, dan keberanian untuk memperbaiki diri.
+Kami pernah membuat kesalahan, tapi di sinilah kami belajar meminta maaf, dan memaafkan.
+</p>
+      </div>
+      <div class="slide" id="slide-3">
+        <h2>Doa Kami</h2>
+        <p class="teks-dukung">Untuk Ibu Ade, dan untuk semua yang pernah menjadi bagian dari langkah kami.
+</p>
+        <p class="teks-isi".>Untuk Ibu Ade, dan untuk semua yang pernah menjadi bagian dari langkah kami.
+
+Ya Allah, Tuhan yang Maha Penyayang,
+hari ini kami ingin mengucapkan syukur atas perjalanan kami di kelas 9B.
+Di balik tawa, air mata, dan perjuangan,
+Engkau titipkan sosok-sosok luar biasa yang membimbing dan mendampingi kami,
+salah satunya adalah Ibu Ade.
+
+Untuk Ibu Ade yang telah begitu tulus membimbing kami,
+meski kadang kami sulit diatur,
+kami mohon, ya Allah, berikanlah beliau kesehatan yang sempurna,
+panjangkan usianya dalam keberkahan,
+dan bahagiakan hatinya di dunia maupun di akhirat.</p>
+      </div>
+      <div class="slide" id="slide-4">
+        <h2>Dari Saya Pribadi Selaku Editor </h2>
+        <p class="teks-dukung">Doaku untuk Ibu Ade
+Dari saya, murid ibu sejak kelas 7 hingga 9.
+</p>
+        <p class="teks-isi">Ya Allah,
+Hari ini aku ingin menyampaikan sesuatu yang tidak selalu bisa aku ucapkan langsung:
+
+terima kasih karena Engkau telah mengirimkan sosok sebaik Ibu Ade dalam perjalananku belajar.
+
+Sejak aku duduk di kelas 7, hingga kini mengakhiri kelas 9,
+Ibu Ade bukan hanya menjadi guru—tapi juga pembimbing hidup.
+Ibu mengajarkan kesabaran tanpa harus berteriak,
+mengajarkan arti tanggung jawab hanya lewat contoh.
+
+ Ya Allah, saya berdoa
+Lindungi Ibu Ade selalu.
+Sehatkan tubuh dan hatinya.
+Bahagiakan hidupnya,
+sebagaimana beliau telah mengisi hariku dengan ilmu dan kasih.
+
+Izinkan saya membawa semua pelajaran dan nasihat Ibu ke masa depanku.
+Agar saat aku berhasil nanti, aku bisa berkata dalam hati:
+"Terima kasih, Ibu. Doamu tak pernah sia-sia."</p>
+      </div>
+    </div>
+    <div id="slide-warning">(Ketuk 2 kali untuk pindah slide)</div>
+
+    <div id="typing-text"></div>
+
+    <p class="note">Dengan hormat dan penuh cinta,<br />Kami, Kelas 9B</p>
+    <p class="note">𝑪𝒓𝒆𝒂𝒕𝒆𝒅 𝒃𝒚 𝑭𝒂𝒉𝒓𝒊 𝑨𝒅𝒊𝒕𝒚𝒂</p>
+  </div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="https://assets.onecompiler.app/43k3cj6jv/43k3dgysp/tiktokio.com_bUhHoW1oVA6nBUxkGFEN.mp3" type="audio/mpeg" />
+  </audio>
+
+
+  <script>
+  const text = "Terima kasih atas semua kenangan, bimbingan, dan kasih sayang yang Ibu berikan...";
+  let i = 0;
+
+  function startTyping() {
+    const typingEl = document.getElementById("typing-text");
+    if (i < text.length) {
+      typingEl.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(startTyping, 70);
+    }
+  }
+
+ let currentSlide = 1;
+const totalSlides = 4;
+
+document.querySelector('.slide-container').addEventListener('dblclick', () => {
+  document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+  currentSlide = currentSlide % totalSlides + 1;
+  document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+  document.getElementById('slide-warning').textContent =
+    currentSlide === totalSlides
+      ? '(Ketuk 2 kali untuk kembali ke slide 1)'
+      : '(Ketuk 2 kali untuk pindah slide)';
+      
+});
+</script>
+    
+  </script>
+</body>
+</html> 
+ 
+
+  <div class="chibi-container">
+    <img src="https://assets.onecompiler.app/43k3cj6jv/43k3ymcnh/file_00000000917861fdb5dfcacfd33ef65f-removebg-preview.png" alt="Chibi Menyapa" class="chibi-character" />
+    <p class="typing-text">Selamat Datang!</p>
+  </div>
+
+</body>
+</html>
